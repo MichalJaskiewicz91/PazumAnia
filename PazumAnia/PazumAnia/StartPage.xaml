@@ -15,5 +15,6 @@
         <Entry Placeholder="Please input your password "/>
 
         <Button Text="Submit" Clicked="Button_Clicked"/>
+
     </StackLayout>
 </ContentPage>
