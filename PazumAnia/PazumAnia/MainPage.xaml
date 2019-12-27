@@ -1,14 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:PazumAnia"
              x:Class="PazumAnia.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Activated="ToolbarItem_Activated"/>
+    </ContentPage.ToolbarItems>
 
+    <StackLayout VerticalOptions="Start" Spacing="20">
+        <Button Text="I am camera" BackgroundColor="Wheat" BorderRadius="10" TextColor="Black"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Left" BackgroundColor="IndianRed" BorderRadius="0" TextColor="Black" Grid.Column="0">
+                <Button.Image>
+                    <OnPlatform x:TypeArguments ="FileImageSource"
+                                iOS="baseline_arrow_back_black_24pt_1x.png"
+                                Android="baseline_arrow_back_black_24.png"
+                                />
+                </Button.Image>
+            </Button>
+            <Button Text="Right" BackgroundColor="IndianRed" BorderRadius="0" TextColor="Black" Grid.Column="1">
+                <Button.Image>
+                    <OnPlatform x:TypeArguments ="FileImageSource"
+                                iOS="baseline_arrow_forward_black_24pt_1x.png"
+                                Android="baseline_arrow_forward_black_24.png"
+                                />
+                </Button.Image>
+            </Button>
+        </Grid>
+
+    </StackLayout>
+    
 </ContentPage>

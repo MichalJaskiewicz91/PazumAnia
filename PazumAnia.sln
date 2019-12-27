@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PazumAnia.Android", "PazumA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PazumAnia.iOS", "PazumAnia\PazumAnia.iOS\PazumAnia.iOS.csproj", "{18A59E44-B24F-42EC-BA70-2A6CFC50DB14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PazumAnia", "PazumAnia\PazumAnia\PazumAnia.csproj", "{05483300-8AAD-455C-BBE8-7CE614AFEC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PazumAnia", "PazumAnia\PazumAnia\PazumAnia.csproj", "{05483300-8AAD-455C-BBE8-7CE614AFEC10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PazumAnia.StartPage">
+
+    <StackLayout Margin="10,10,10,10" Padding="2">
+
+        <!-- Login Label-->
+        <Label Text="LOGIN" HorizontalOptions="Center" FontSize="24" />
+
+        <!-- Entry Login-->
+        <Entry Placeholder="Please input your login "/>
+
+        <!-- Entry Password-->
+        <Entry Placeholder="Please input your password "/>
+
+        <Button Text="Submit" Clicked="Button_Clicked"/>
+    </StackLayout>
+</ContentPage>
