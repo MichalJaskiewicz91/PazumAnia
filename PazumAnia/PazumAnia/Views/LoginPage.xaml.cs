@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace PazumAnia.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class WelcomePage : ContentPage
-	{
-		public WelcomePage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
+    {
+        public LoginPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

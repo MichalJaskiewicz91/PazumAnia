@@ -6,7 +6,7 @@
     <StackLayout Margin="10,10,10,10" Padding="2">
 
         <!-- Login Label-->
-        <Label Text="LOGIN" HorizontalOptions="Center" FontSize="24" />
+        <Label Text="LOGIN" HorizontalOptions="Center" FontSize="24" FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
 
         <!-- Entry Login-->
         <Entry Placeholder="Please input your login "/>
