@@ -8,7 +8,7 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout VerticalOptions="Start" Spacing="20">
-        <Image Source="pazumania.png" WidthRequest="120" HeightRequest="120"></Image>
+        <Image Source="baseline_house_black_24" WidthRequest="120" HeightRequest="120"></Image>
         <Button Text="I am camera" BackgroundColor="Wheat" BorderRadius="10" TextColor="Black"/>
         <Grid>
             <Grid.ColumnDefinitions>

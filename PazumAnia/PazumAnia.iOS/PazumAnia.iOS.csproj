@@ -96,6 +96,7 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\AlexBrush-Regular.ttf" />
+    <BundleResource Include="Resources\Brushwell.otf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -165,21 +166,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\baseline_arrow_back_black_24pt_1x.png" />
+    <BundleResource Include="Resources\baseline_house_black_18.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\baseline_arrow_back_black_24pt_2x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\baseline_arrow_back_black_24pt_3x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\baseline_arrow_forward_black_24pt_3x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\baseline_arrow_forward_black_24pt_1x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\baseline_arrow_forward_black_24pt_2x.png" />
+    <BundleResource Include="Resources\baseline_people_black_18dp.png" />
   </ItemGroup>
 </Project>

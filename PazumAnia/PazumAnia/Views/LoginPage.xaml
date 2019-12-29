@@ -13,14 +13,18 @@
 
             <!-- Login Label-->
             <Label x:Name="Logowanie" TextColor="White" Text="Logowanie" HorizontalOptions="Center" FontSize="24" FontFamily="Brushwell.otf#Brushwell" />
-            <!-- BoxView-->
-            <BoxView HeightRequest="20"/>
-
+            
             <!-- Entry Login-->
             <Entry TextColor="White" Placeholder="Wpisz swój login " FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" PlaceholderColor="White"/>
 
             <!-- Entry Password-->
             <Entry TextColor="white" Placeholder="Wpisz swoje hasło " FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" PlaceholderColor="White"/>
+
+            <!-- BoxView-->
+            <BoxView HeightRequest="10"/>
+
+            <!-- Submit button-->
+            <Button Clicked="Button_Clicked" BackgroundColor="White" Text="Login" FontFamily="Brushwell.otf#Brushwell" TextColor="#005E68"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

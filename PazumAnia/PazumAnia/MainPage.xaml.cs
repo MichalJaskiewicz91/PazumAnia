@@ -16,7 +16,7 @@ namespace PazumAnia
 
         private void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new StartPage()); 
+            //Navigation.PushAsync(new StartPage()); 
         }
     }
 }

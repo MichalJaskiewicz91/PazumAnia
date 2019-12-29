@@ -10,6 +10,9 @@
             <Style TargetType="Entry">
                 <Setter Property="FontFamily" Value="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
             </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="Brushwell.otf#Brushwell"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
