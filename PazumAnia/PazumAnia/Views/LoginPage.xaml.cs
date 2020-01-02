@@ -23,9 +23,9 @@ namespace PazumAnia.Views
         private void Button_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Succes", "We have handled the click event", "Great!");
-            //App.Current.MainPage = new NavigationPage(new MainTabbedPage());
-            MySqlDatabase mySqlDatabase = new MySqlDatabase();
-            mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
+            App.Current.MainPage = new NavigationPage(new MainTabbedPage());
+            //MySqlDatabase mySqlDatabase = new MySqlDatabase();
+            //mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
         }
 
     }

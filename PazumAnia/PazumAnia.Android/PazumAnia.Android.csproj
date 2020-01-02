@@ -70,6 +70,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\AlexBrush-Regular.ttf" />
     <AndroidAsset Include="Assets\Brushwell.otf" />
+    <AndroidAsset Include="Assets\OpenSans-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

@@ -21,11 +21,25 @@ namespace PazumAnia.DataBase
         // Connect to MySql database
         public void ConnectToDB()
         {
-            _mySqlConnection.Open();
+            //_mySqlConnection.Open();
             //if (_mySqlConnection.State == ConnectionState.Closed)
             //{
             //    _mySqlConnection.Open();
             //}
+        }
+        public void test()
+        {
+            MySqlConnectionStringBuilder b = new MySqlConnectionStringBuilder();
+            b.Server = "localhost";
+            b.Port = 3306;
+            b.Database = "pazumania";
+            b.UserID = "root";
+            b.Password = "root";
+            b.CharacterSet = "utf8";
+            var connstr = b.ToString();
+            MySqlConnection conn = new MySqlConnection(connstr);
+            conn.Open();
+            conn.Close();
         }
         // Read from DB
         public MySqlDataReader ReadFromDB(string query)

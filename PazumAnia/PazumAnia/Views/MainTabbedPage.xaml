@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PazumAnia.Views.MainTabbedPage">
-  <!--Pages can be added as references or inline-->
+             x:Class="PazumAnia.Views.MainTabbedPage"
+            xmlns:ViewModels="clr-namespace:PazumAnia.ViewModels">
+    <TabbedPage.BindingContext>
+        <ViewModels:MainViewModel/>
+    </TabbedPage.BindingContext>
+
+
+    <!--Pages can be added as references or inline-->
 
     <!--Tab 1-->
     <ContentPage Title="Home" Icon="baseline_house_black_18">
@@ -21,13 +27,24 @@
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    
+
     <!--Tab 3-->
     <ContentPage Title="Profile" Icon="baseline_person_black_24">
         <ContentPage.Content>
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Thierry Henry"/>
-            </StackLayout>
+            <ListView ItemsSource="{Binding UsersList}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Id}" FontFamily="OpenSans-Regular.ttf#OpenSans-Regular"/>
+                                <Label Text="{Binding Login}" FontFamily="OpenSans-Regular.ttf#OpenSans-Regular"/>
+                                <Label Text="{Binding Password}" FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

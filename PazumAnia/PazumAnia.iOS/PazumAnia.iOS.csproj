@@ -97,6 +97,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\AlexBrush-Regular.ttf" />
     <BundleResource Include="Resources\Brushwell.otf" />
+    <BundleResource Include="Resources\OpenSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
