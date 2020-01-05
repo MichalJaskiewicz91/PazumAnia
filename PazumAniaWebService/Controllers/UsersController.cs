@@ -1,89 +1,115 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web.Mvc;
+using System.Net;
 using System.Web.Http;
+using System.Web.Http.Description;
+using PazumAniaWebService.Models;
 
 namespace PazumAniaWebService.Controllers
 {
     public class UsersController : ApiController
     {
-        // GET: Users
-        public ActionResult Index()
+        private PazumAniaWebServiceContext db = new PazumAniaWebServiceContext();
+
+        // GET: api/Users
+        public IQueryable<Users> GetUsers()
         {
-            return View();
+            return db.Users;
         }
 
-        // GET: Users/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Users/5
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult GetUsers(int id)
         {
-            return View();
-        }
-
-        // GET: Users/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Users/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            Users users = db.Users.Find(id);
+            if (users == null)
             {
-                // TODO: Add insert logic here
+                return NotFound();
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(users);
         }
 
-        // GET: Users/Edit/5
-        public ActionResult Edit(int id)
+        //// PUT: api/Users/5
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutUsers(int id, Users users)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    if (id != users.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    db.Entry(users).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        db.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!UsersExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
+
+        // POST: api/Users
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult PostUsers(Users users)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.Users.Add(users);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = users.Id }, users);
         }
 
-        // POST: Users/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        // DELETE: api/Users/5
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult DeleteUsers(int id)
         {
-            try
+            Users users = db.Users.Find(id);
+            if (users == null)
             {
-                // TODO: Add update logic here
+                return NotFound();
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            db.Users.Remove(users);
+            db.SaveChanges();
+
+            return Ok(users);
         }
 
-        // GET: Users/Delete/5
-        public ActionResult Delete(int id)
+        protected override void Dispose(bool disposing)
         {
-            return View();
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
-        // POST: Users/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        private bool UsersExists(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }

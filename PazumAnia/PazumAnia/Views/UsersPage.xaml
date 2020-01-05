@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PazumAnia.Views.UsersPage"
+            xmlns:ViewModels="clr-namespace:PazumAnia.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModels:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="18">
+            <Label Text="Id"/>
+            <Entry Text="{Binding SelectedUser.Id, Mode=TwoWay}"/>
+
+            <Label Text="Login"/>
+            <Entry Text="{Binding SelectedUser.Login, Mode=TwoWay}"/>
+
+            <Label Text="Password"/>
+            <Entry Text="{Binding SelectedUser.Password, Mode=TwoWay}"/>
+
+            <Button Text="POST User" Command="{Binding PostCommand}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

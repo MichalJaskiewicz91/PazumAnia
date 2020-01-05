@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using PazumAnia.ViewModels;
 
 namespace PazumAnia.Views
 {
@@ -18,6 +19,17 @@ namespace PazumAnia.Views
         {
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UsersPage());
+        }
+
+        private void Button_ClickedGetAsync(object sender, EventArgs e)
+        {
+                MainViewModel mainViewModel = new MainViewModel();
+                mainViewModel.InitializeDataAsync();
         }
     }
 }

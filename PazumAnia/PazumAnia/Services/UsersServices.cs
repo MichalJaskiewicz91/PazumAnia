@@ -1,7 +1,9 @@
 ﻿using PazumAnia.Models;
+using PazumAnia.RestClient;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PazumAnia.Services
 {
@@ -26,6 +28,17 @@ namespace PazumAnia.Services
                 },
             };
             return list;
+        }
+        public async Task<List<Users>> GetUsersAsync()
+        {
+            RestClient<Users> restClient = new RestClient<Users>();
+            var usersList = await restClient.GetAsync();
+            return usersList;
+        }
+        public async Task PostUsersAsync(Users users)
+        {
+            RestClient<Users> restClient = new RestClient<Users>();
+            var usersList = await restClient.PostAsync(users);
         }
     }
 }

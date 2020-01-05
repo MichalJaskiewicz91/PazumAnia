@@ -31,20 +31,23 @@
     <!--Tab 3-->
     <ContentPage Title="Profile" Icon="baseline_person_black_24">
         <ContentPage.Content>
-            <ListView ItemsSource="{Binding UsersList}"
+            <StackLayout Orientation="Vertical">
+                <Button Text="Add new User" Clicked="Button_Clicked"></Button>
+                <ListView ItemsSource="{Binding UsersList}"
                       HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Id}" FontFamily="OpenSans-Regular.ttf#OpenSans-Regular"/>
-                                <Label Text="{Binding Login}" FontFamily="OpenSans-Regular.ttf#OpenSans-Regular"/>
-                                <Label Text="{Binding Password}" FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Id}" FontFamily="OpenSans-Regular.ttf#OpenSans-Regular"/>
+                                    <Label Text="{Binding Login}" FontFamily="OpenSans-Regular.ttf#OpenSans-Regular"/>
+                                    <Label Text="{Binding Password}" FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

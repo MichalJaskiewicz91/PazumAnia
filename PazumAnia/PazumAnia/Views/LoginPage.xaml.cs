@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using PazumAnia.DataBase;
-
+using PazumAnia.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
