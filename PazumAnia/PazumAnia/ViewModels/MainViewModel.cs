@@ -12,26 +12,15 @@ namespace PazumAnia.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private List<Users> _usersList;
+        #region Fields
         private Users _selectedUser = new Users();
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        private List<Users> _usersList;
+        private bool _isBusy;
+        private string _statusMessage;
+        #endregion
+        // Properties represent state of the view
+        #region Properties
         public Users SelectedUser { get => _selectedUser; set => _selectedUser = value; }
-        public Command PostCommand
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    var usersServices = new UsersServices();
-                    await usersServices.PostUsersAsync(_selectedUser);
-
-
-                });
-            }
-        }
-
         public List<Users> UsersList
         {
             get { return _usersList; }
@@ -41,12 +30,63 @@ namespace PazumAnia.ViewModels
                 OnPropertyChanged();
             }
         }
+        public Command PostCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsBusy = true;
+
+                    var usersServices = new UsersServices();
+                    var isSuccess = await usersServices.PostUsersAsync(_selectedUser);
+
+                    if (isSuccess == true)
+                    {
+                        StatusMessage = "Post Users has done successfully!";
+                    }
+                    else
+                    {
+                        StatusMessage = "Operation Post failed";
+                    }
+
+                    IsBusy = false;
+                });
+            }
+        }
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged();
+            }
+        }
+        public string StatusMessage
+        {
+            get { return _statusMessage; }
+            set
+            {
+                _statusMessage = value;
+                OnPropertyChanged();
+            }
+        }
+        #endregion
+        #region Constructos
+        // Constructors
         public MainViewModel()
         {
             //var userServices = new UsersServices();
             //UsersList = userServices.GetUsers();
             InitializeDataAsync();
         }
+        #endregion
+        #region Events
+        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
+        // Method implement the logic behind the view
+        #region Methods
         public async Task InitializeDataAsync()
         {
             var userServices = new UsersServices();
@@ -56,5 +96,7 @@ namespace PazumAnia.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
+
     }
 }

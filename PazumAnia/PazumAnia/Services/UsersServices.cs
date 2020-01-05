@@ -35,10 +35,11 @@ namespace PazumAnia.Services
             var usersList = await restClient.GetAsync();
             return usersList;
         }
-        public async Task PostUsersAsync(Users users)
+        public async Task<bool> PostUsersAsync(Users users)
         {
             RestClient<Users> restClient = new RestClient<Users>();
-            var usersList = await restClient.PostAsync(users);
+            var isSuccessStatusCOde = await restClient.PostAsync(users);
+            return isSuccessStatusCOde;
         }
     }
 }

@@ -6,11 +6,9 @@
     <ContentPage.BindingContext>
         <ViewModels:MainViewModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Spacing="18">
-            <Label Text="Id"/>
-            <Entry Text="{Binding SelectedUser.Id, Mode=TwoWay}"/>
 
             <Label Text="Login"/>
             <Entry Text="{Binding SelectedUser.Login, Mode=TwoWay}"/>
@@ -18,7 +16,15 @@
             <Label Text="Password"/>
             <Entry Text="{Binding SelectedUser.Password, Mode=TwoWay}"/>
 
-            <Button Text="POST User" Command="{Binding PostCommand}"/>
+            <Button Text="POST User"
+                    Command="{Binding PostCommand}"/>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"/>
+
+            <Label Text="{Binding StatusMessage}"
+                   TextColor="Green"
+                   FontSize="24"/>
 
         </StackLayout>
     </ContentPage.Content>
