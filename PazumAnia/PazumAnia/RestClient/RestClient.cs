@@ -11,7 +11,7 @@ namespace PazumAnia.RestClient
 {
    public class RestClient<T>
     {
-        private const string WebserviceUrl = "http://192.168.0.129:8020/api/Users/";
+        private const string WebserviceUrl = "http://localhost:59310/api/Users/";
 
         public async Task<List<T>> GetAsync()
         {
