@@ -12,7 +12,7 @@ namespace PazumAnia
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new RegisterPage());
         }
 
         protected override void OnStart()
