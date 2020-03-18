@@ -1,4 +1,5 @@
-﻿using PazumAnia.Services;
+﻿using PazumAnia.Helpers;
+using PazumAnia.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,7 @@ namespace PazumAnia.ViewModels
     public class RegisterViewModel
     {
         ApiServices apiServices = new ApiServices();
+        public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
@@ -22,6 +24,9 @@ namespace PazumAnia.ViewModels
                 return new Command(async() =>
                 {
                     var isSuccess = await apiServices.RegisterAsync(Email, Password, ConfirmPassword);
+
+                    Settings.Username = Username;
+                    Settings.Password = Password;
 
                     if (isSuccess)
                     {

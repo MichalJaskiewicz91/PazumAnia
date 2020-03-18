@@ -9,17 +9,17 @@ using Xamarin.Forms.Xaml;
 
 namespace PazumAnia.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RegisterPage : ContentPage
-	{
-		public RegisterPage ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPageTwo : ContentPage
+    {
+        public LoginPageTwo()
+        {
+            InitializeComponent();
+        }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPageTwo());
+            await Navigation.PushAsync(new IdeasPage());
         }
     }
 }

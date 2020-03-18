@@ -23,6 +23,8 @@
 
         <Label Text="{Binding Message}"></Label>
 
+        <Button Text="Go to login page" Clicked="Button_Clicked"/>
+                
     </StackLayout>
 
 </ContentPage>
