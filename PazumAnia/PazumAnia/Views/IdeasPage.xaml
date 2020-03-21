@@ -13,9 +13,14 @@
             <!--<Entry Text ="{Binding AccessToken}"
                     IsPassword="True"/>-->
             <Button Command="{Binding GetIdeasCommand}"
-                    Text="Get Alll Ideas"/>
+                    Text="Get All Ideas"/>
+
+            <Button Text="New Idea" Clicked="GotoNewIdeaPage_Clicked"/>
+
+
             <ListView ItemsSource="{Binding Ideas}"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      ItemTapped="IdeasListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -27,8 +32,8 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
+            <Button Text="Go to login page" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

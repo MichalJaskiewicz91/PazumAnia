@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PazumAnia.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,22 @@ namespace PazumAnia.Views
         public IdeasPage()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPageTwo());
+        }
+
+        private async void GotoNewIdeaPage_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddNewIdeaPage());
+        }
+
+        private async void IdeasListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var idea = e.Item as Idea;
+            await Navigation.PushAsync(new EditIdeaPage(idea));
         }
     }
 }
