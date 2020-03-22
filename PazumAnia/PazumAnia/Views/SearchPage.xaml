@@ -2,32 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ViewModels="clr-namespace:PazumAnia.ViewModels"
-             x:Class="PazumAnia.Views.IdeasPage">
-
+             x:Class="PazumAnia.Views.SearchPage">
     <ContentPage.BindingContext>
-        <ViewModels:IdeasViewModel/>
+        <ViewModels:SearchViewModel/>
     </ContentPage.BindingContext>
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Logout"
-                     Command="{Binding LogoutCommand}"
-                     Clicked="Logout_Clicked"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <!--<Entry Text ="{Binding AccessToken}"
-                    IsPassword="True"/>-->
-            <Button Command="{Binding GetIdeasCommand}"
-                    Text="Get All Ideas"/>
-
-            <Button Text="New Idea" Clicked="GotoNewIdeaPage_Clicked"/>
-
-            <Button Text="Search Ideas" Clicked="NavigateToSearchIdeas_Clicked"/>
-
+            <SearchBar Text="{Binding Keyword}"/>
+            <Button Command="{Binding SearchCommand}"
+                    Text="Search Ideas"/>
 
             <ListView ItemsSource="{Binding Ideas}"
-                      HasUnevenRows="True"
-                      ItemTapped="IdeasListView_ItemTapped">
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -40,7 +26,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Go to login page" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

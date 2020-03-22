@@ -11,12 +11,13 @@ using Xamarin.Forms;
 
 namespace PazumAnia.ViewModels
 {
-    public class IdeasViewModel : INotifyPropertyChanged
+    public class SearchViewModel : INotifyPropertyChanged
     {
         ApiServices _apiServices = new ApiServices();
         private List<Idea> _ideas;
 
-        //public string AccessToken { get; set; }
+        public string Keyword { get; set; }
+
         public List<Idea> Ideas
         {
             get { return _ideas; }
@@ -26,35 +27,15 @@ namespace PazumAnia.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        //get { return _ideas; }
-        //set
-        //{
-        //    _ideas = value;
-        //    OnPropertyChanged();
-        //}
-
-        public ICommand GetIdeasCommand
+        public ICommand SearchCommand
         {
             get
             {
                 return new Command(async () =>
                 {
-                    var accesstoken = Settings.AccessToken;
-                    Ideas = await _apiServices.GetIdeasAsync(accesstoken);
+                    Ideas = await _apiServices.SearchIdeasAsync(Keyword, Settings.AccessToken);
                 });
-            }
-        }
-        public ICommand LogoutCommand
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    Settings.AccessToken = "";
-                    Settings.Username = "";
-                    Settings.Password = "";
-                });
+
             }
         }
 
@@ -64,6 +45,5 @@ namespace PazumAnia.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

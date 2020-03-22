@@ -33,5 +33,15 @@ namespace PazumAnia.Views
             var idea = e.Item as Idea;
             await Navigation.PushAsync(new EditIdeaPage(idea));
         }
+
+        private async void NavigateToSearchIdeas_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SearchPage());
+        }
+
+        private async void Logout_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPageTwo());
+        }
     }
 }

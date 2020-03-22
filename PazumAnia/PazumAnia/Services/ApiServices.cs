@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using PazumAnia.Helpers;
 using PazumAnia.Models;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,9 @@ namespace PazumAnia.Services
 
             //Take AccessToken from deserialized object 
             var accessToken = jwtDynamic.Value<string>("access_token");
+            var accessTokenExpiration = jwtDynamic.Value<DateTime>(".expires");
+
+            Settings.AccessTokenExpiration = accessTokenExpiration;
 
             //Write AccessToken to the output console
             Debug.WriteLine(jwt);
@@ -124,6 +128,17 @@ namespace PazumAnia.Services
 
             var response = await client.DeleteAsync("http://192.168.0.129:8020/api/ideas/" + id);
 
+        }
+        public async Task<List<Idea>> SearchIdeasAsync(string keyword, string accessToken)
+        {
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+            var json = await client.GetStringAsync("http://192.168.0.129:8020/api/ideas/Search/" + keyword);
+
+            var ideas = JsonConvert.DeserializeObject<List<Idea>>(json);
+
+            return ideas;
         }
 
     }

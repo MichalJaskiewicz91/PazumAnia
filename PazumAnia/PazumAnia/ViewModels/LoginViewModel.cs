@@ -1,5 +1,6 @@
 ﻿using PazumAnia.Helpers;
 using PazumAnia.Services;
+using Renci.SshNet.Messages;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,7 @@ namespace PazumAnia.ViewModels
         private ApiServices _apiServices = new ApiServices();
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Message { get; set; }
         public ICommand LoginCommand
         {
             get
@@ -20,6 +22,11 @@ namespace PazumAnia.ViewModels
                 return new Command(async() =>
                 {
                     var accesstoken = await _apiServices.LoginAsync(Username, Password);
+
+                    //if (accesstoken == null)
+                    //{
+                    //    Message = "Registered successfully";
+                    //}
 
                     Settings.AccessToken = accesstoken;
                 });

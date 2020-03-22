@@ -49,5 +49,16 @@ namespace PazumAnia.Helpers
                 AppSettings.AddOrUpdateValue("AccessToken", value);
             }
         }
+        public static DateTime AccessTokenExpiration
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("AccessTokenExpiration", DateTime.UtcNow);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("AccessTokenExpiration", value);
+            }
+        }
     }
 }

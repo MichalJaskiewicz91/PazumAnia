@@ -1,4 +1,5 @@
 ﻿using PazumAnia.Helpers;
+using PazumAnia.ViewModels;
 using PazumAnia.Views;
 using System;
 using Xamarin.Forms;
@@ -22,6 +23,11 @@ namespace PazumAnia
         {
             if (!string.IsNullOrEmpty(Settings.AccessToken))
             {
+                if (DateTime.UtcNow.AddHours(1) > Settings.AccessTokenExpiration)
+                {
+                    var vm = new LoginViewModel();
+                    vm.LoginCommand.Execute(null);
+                }
                 MainPage = new NavigationPage(new IdeasPage());
             }
             else if (!string.IsNullOrEmpty(Settings.Username) && !string.IsNullOrEmpty(Settings.Password))
