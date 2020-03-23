@@ -41,7 +41,7 @@ namespace PazumAnia.Views
 
         private async void Logout_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPageTwo());
+            await Navigation.PushAsync(new RegisterPage());
         }
     }
 }

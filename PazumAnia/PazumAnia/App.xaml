@@ -4,7 +4,7 @@
              x:Class="PazumAnia.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style x:Key="Brushwell" TargetType="Label">
+            <!--<Style x:Key="Brushwell" TargetType="Label">
                 <Setter Property="FontFamily" Value="Brushwell.otf#Brushwell"/>
             </Style>
             <Style x:Key="OpenSans-Regular" TargetType="Label">
@@ -15,7 +15,7 @@
             </Style>
             <Style TargetType="Button">
                 <Setter Property="FontFamily" Value="Brushwell.otf#Brushwell"/>
-            </Style>
+            </Style>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

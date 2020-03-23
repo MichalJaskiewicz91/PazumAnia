@@ -25,6 +25,7 @@
 
             <!-- Submit button-->
             <Button Clicked="Button_Clicked" BackgroundColor="White" Text="Login" FontFamily="Brushwell.otf#Brushwell" TextColor="#005E68"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -31,5 +31,10 @@ namespace PazumAnia.Views
                 MainViewModel mainViewModel = new MainViewModel();
                 mainViewModel.InitializeDataAsync();
         }
+
+        private async void RegisterBackButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
+        }
     }
 }

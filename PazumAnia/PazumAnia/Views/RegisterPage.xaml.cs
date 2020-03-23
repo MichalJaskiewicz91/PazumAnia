@@ -21,5 +21,10 @@ namespace PazumAnia.Views
         {
             await Navigation.PushAsync(new LoginPageTwo());
         }
+
+        private async void AniaButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
+        }
     }
 }

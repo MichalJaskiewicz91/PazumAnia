@@ -33,6 +33,7 @@
         <ContentPage.Content>
             <StackLayout Orientation="Vertical">
                 <Button Text="Add new User" Clicked="Button_Clicked"></Button>
+                <Button Text="Back to Register Page" Clicked="RegisterBackButton_Clicked"></Button>
                 <ListView ItemsSource="{Binding UsersList}"
                       HasUnevenRows="True">
                     <ListView.ItemTemplate>

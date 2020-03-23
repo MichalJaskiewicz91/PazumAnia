@@ -14,7 +14,7 @@ namespace PazumAnia.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditIdeaPage : ContentPage
 	{
-		public EditIdeaPage (Idea idea)
+        public EditIdeaPage (Idea idea)
 		{
             var editIdeaViewModel = new EditIdeaViewModel();
             editIdeaViewModel.Idea = idea;
@@ -26,5 +26,5 @@ namespace PazumAnia.Views
             //var editIdeaViewModel = BindingContext as EditIdeaViewModel;
             //editIdeaViewModel.Idea = idea;
 		}
-	}
+    }
 }

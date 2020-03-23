@@ -24,7 +24,9 @@
         <Label Text="{Binding Message}"></Label>
 
         <Button Text="Go to login page" Clicked="Button_Clicked"/>
-                
+
+        <Button Text="Go to login Ania" Clicked="AniaButton_Clicked"/>
+
     </StackLayout>
 
 </ContentPage>
