@@ -32,7 +32,7 @@ namespace PazumAnia
             }
             else if (!string.IsNullOrEmpty(Settings.Username) && !string.IsNullOrEmpty(Settings.Password))
             {
-                MainPage = new NavigationPage(new LoginPageTwo());
+                MainPage = new NavigationPage(new LoginPage());
             }
             else
             {

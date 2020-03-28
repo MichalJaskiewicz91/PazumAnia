@@ -1,33 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:PazumAnia.ViewModels"
              x:Class="PazumAnia.Views.LoginPage">
+
+    <!-- Binding LoginViewModel-->
+    <ContentPage.BindingContext>
+        <ViewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
 
         <StackLayout BackgroundColor="#005E68" Spacing="10" >
             <!-- Image PazumAnia White-->
             <Image Source="CutWhiteLogo"></Image>
 
-            <!-- BoxView-->
-            <BoxView HeightRequest="5"/>
-
             <!-- Login Label-->
-            <Label x:Name="Logowanie" TextColor="White" Text="Logowanie" HorizontalOptions="Center" FontSize="24" FontFamily="Brushwell.otf#Brushwell" />
+            <Label x:Name="Logowanie" 
+                   TextColor="White" 
+                   Text="Logowanie" 
+                   HorizontalOptions="Center" 
+                   FontSize="24" 
+                   FontFamily="Brushwell.otf#Brushwell" />
             
             <!-- Entry Login-->
-            <Entry TextColor="White" Placeholder="Wpisz swój login " FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" PlaceholderColor="White"/>
+            <Entry Text="{Binding Username}"
+                   TextColor="White" 
+                   Placeholder="Wpisz swój login " 
+                   FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" 
+                   PlaceholderColor="White"/>
 
             <!-- Entry Password-->
-            <Entry TextColor="white" Placeholder="Wpisz swoje hasło " FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" PlaceholderColor="White"/>
+            <Entry Text ="{Binding Password}"
+                   TextColor="white" 
+                   Placeholder="Wpisz swoje hasło " 
+                   FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" 
+                   PlaceholderColor="White"
+                   IsPassword="True"
+                   Margin="0,0,0,20"/>
 
-            <!-- BoxView-->
-            <BoxView HeightRequest="10"/>
+            <!-- Login button-->
+            <Button Command="{Binding LoginCommand}" 
+                    BackgroundColor="White" 
+                    Text="Login" 
+                    FontFamily="Brushwell.otf#Brushwell" 
+                    TextColor="#005E68"/>
 
-            <!-- Submit button-->
-            <Button Clicked="Button_Clicked" BackgroundColor="White" Text="Login" FontFamily="Brushwell.otf#Brushwell" TextColor="#005E68"/>
-
-            <Button Clicked="GoToRegisterPage" BackgroundColor="White" Text="RegisterAnia" FontFamily="Brushwell.otf#Brushwell" TextColor="#005E68"/>
+            <!-- Status label // so far it is not used -->
+            <!--<Label Text="{Binding SuccessMessage}"
+                   TextColor="Green"
+                   FontSize="24"/>-->
 
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

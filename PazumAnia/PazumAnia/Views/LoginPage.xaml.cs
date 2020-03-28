@@ -15,22 +15,29 @@ namespace PazumAnia.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+
         MySqlDataReader mySqlDataReader;
         public LoginPage()
         {
             InitializeComponent();
         }
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Succes", "We have handled the click event", "Great!");
-            App.Current.MainPage = new NavigationPage(new MainTabbedPage());
-            //MySqlDatabase mySqlDatabase = new MySqlDatabase();
-            //mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
-        }
 
-        private void GoToRegisterPage(object sender, EventArgs e)
-        {
-            App.Current.MainPage = new NavigationPage(new RegisterPageAnia());
-        }
-    }
+
+    //public static async Task DisplayAlert(string notification, string description, string ok)
+    //{
+
+    //    await DisplayAlert(notification, description, ok);
+    //}
+    //private void Button_Clicked(object sender, EventArgs e)
+    //{
+    //    App.Current.MainPage = new NavigationPage(new MainTabbedPage());
+    //    //MySqlDatabase mySqlDatabase = new MySqlDatabase();
+    //    //mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
+    //}
+
+    //private void GoToRegisterPage(object sender, EventArgs e)
+    //{
+    //    App.Current.MainPage = new NavigationPage(new RegisterPageAnia());
+    //}
+}
 }
