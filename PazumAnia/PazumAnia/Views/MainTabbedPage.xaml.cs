@@ -15,7 +15,7 @@ namespace PazumAnia.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainTabbedPage : Xamarin.Forms.TabbedPage
     {
-        public MainTabbedPage ()
+        public MainTabbedPage()
         {
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);

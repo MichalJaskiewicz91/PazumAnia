@@ -28,5 +28,9 @@ namespace PazumAnia.Views
             //mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
         }
 
+        private void GoToRegisterPage(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new RegisterPageAnia());
+        }
     }
 }

@@ -6,10 +6,10 @@
 
         <StackLayout BackgroundColor="#005E68" Spacing="10" >
             <!-- Image PazumAnia White-->
-            <Image Source="cuted"></Image>
+            <Image Source="CutWhiteLogo"></Image>
 
             <!-- BoxView-->
-            <BoxView HeightRequest="10"/>
+            <BoxView HeightRequest="5"/>
 
             <!-- Login Label-->
             <Label x:Name="Logowanie" TextColor="White" Text="Logowanie" HorizontalOptions="Center" FontSize="24" FontFamily="Brushwell.otf#Brushwell" />
@@ -25,6 +25,8 @@
 
             <!-- Submit button-->
             <Button Clicked="Button_Clicked" BackgroundColor="White" Text="Login" FontFamily="Brushwell.otf#Brushwell" TextColor="#005E68"/>
+
+            <Button Clicked="GoToRegisterPage" BackgroundColor="White" Text="RegisterAnia" FontFamily="Brushwell.otf#Brushwell" TextColor="#005E68"/>
 
         </StackLayout>
     </ContentPage.Content>

@@ -20,6 +20,7 @@
             <Label Text="{Binding SuccessMessage}"
                    TextColor="Green"
                    FontSize="24"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

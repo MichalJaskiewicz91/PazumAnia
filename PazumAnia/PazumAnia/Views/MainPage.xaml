@@ -33,7 +33,6 @@
                 </Button.Image>
             </Button>
         </Grid>
-        
     </StackLayout>
     
 </ContentPage>
