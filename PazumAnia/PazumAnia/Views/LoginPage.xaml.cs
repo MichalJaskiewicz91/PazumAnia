@@ -22,22 +22,27 @@ namespace PazumAnia.Views
             InitializeComponent();
         }
 
+        private async void Registration_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPageAnia());
+        }
 
-    //public static async Task DisplayAlert(string notification, string description, string ok)
-    //{
 
-    //    await DisplayAlert(notification, description, ok);
-    //}
-    //private void Button_Clicked(object sender, EventArgs e)
-    //{
-    //    App.Current.MainPage = new NavigationPage(new MainTabbedPage());
-    //    //MySqlDatabase mySqlDatabase = new MySqlDatabase();
-    //    //mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
-    //}
+        //public static async Task DisplayAlert(string notification, string description, string ok)
+        //{
 
-    //private void GoToRegisterPage(object sender, EventArgs e)
-    //{
-    //    App.Current.MainPage = new NavigationPage(new RegisterPageAnia());
-    //}
-}
+        //    await DisplayAlert(notification, description, ok);
+        //}
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    App.Current.MainPage = new NavigationPage(new MainTabbedPage());
+        //    //MySqlDatabase mySqlDatabase = new MySqlDatabase();
+        //    //mySqlDataReader = mySqlDatabase.ReadFromDB("SELECT * FROM visits ORDER BY RAND() LIMIT 1");
+        //}
+
+        //private void GoToRegisterPage(object sender, EventArgs e)
+        //{
+        //    App.Current.MainPage = new NavigationPage(new RegisterPageAnia());
+        //}
+    }
 }

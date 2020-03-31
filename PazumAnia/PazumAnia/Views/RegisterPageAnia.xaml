@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PazumAnia.RegisterPageAnia"
+             xmlns:vm="clr-namespace:PazumAnia.ViewModels">
+
+    <!-- Binding RegisterViewModel-->
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel/>
+    </ContentPage.BindingContext>
+
+    <!-- Resources including styles-->
+    <ContentPage.Resources>
+
+            <ResourceDictionary>
+
+                <Style x:Key="CustomLabelStyle"
+                       TargetType="Label">
+
+                    <Setter Property="TextColor"
+                       Value="Green"/>
+
+                    <Setter Property="FontSize"
+                       Value="50"/>
+                </Style>
+
+                <Style x:Key="CustomEntryStyle"
+                       TargetType="Entry">
+                    
+                <Setter Property="TextColor"
+                        Value="#005E68" />
+
+                <Setter Property="FontFamily"
+                        Value="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
+
+                <Setter Property="Placeholder"
+                        Value="#005E68"/>
+                    
+                <Setter Property="Placeholder"
+                        Value="#005E68"/>
+                    
+                <Setter Property="HeightRequest"
+                        Value="40"/>
+
+                <Setter Property="FontSize"
+                        Value="16"/>
+                </Style>
+
+            </ResourceDictionary>
+
+        </ContentPage.Resources>
+
+    <StackLayout BackgroundColor="White" Spacing="10" >
+         <!--Image PazumAnia White-->
+        <Image Source="CutBlueLogo"></Image>
+
+
+         <!--Login Label-->
+        <Label x:Name="Rejestracja" 
+                   TextColor="#005E68" 
+                   Text="Rejestracja" 
+                   HorizontalOptions="Center" 
+                   FontSize="24" 
+                   FontFamily="Brushwell.otf#Brushwell" />
+
+        <StackLayout BackgroundColor="White" Spacing="0" >
+
+             <!--Entry Login-->
+            <Entry Text="{Binding Email}"
+                   Placeholder="Wpisz swój E-mail" 
+                   Style="{StaticResource CustomEntryStyle}"/>
+
+             <!--Entry Password-->
+            <Entry Text="{Binding Password}"
+                   Placeholder="Wpisz swoje hasło " 
+                   IsPassword="True"
+                   Style="{StaticResource CustomEntryStyle}"/>
+
+             <!--Confirm Password-->
+            <Entry Text="{Binding ConfirmPassword}"
+                   Placeholder="Potwierdz hasło " 
+                   IsPassword="True"
+                   Style="{StaticResource CustomEntryStyle}"/>
+
+        </StackLayout>
+
+         <!--Register Command-->
+        <Button Command="{Binding RegisterCommand}"
+                    
+                    CornerRadius="20"
+                    BackgroundColor="#005E68" 
+                    Text="Rejestruj" 
+                    FontFamily="Brushwell.otf#Brushwell" 
+                    TextColor="White"
+                    HeightRequest="32"
+                    FontSize="10"
+                    Margin="20,0,20,0"/>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="0"/>
+
+            <Grid Grid.Column="1"/>
+
+            <Label Text="Jeżeli posiadasz już konto przejdz do logowania"
+                   Grid.Column="0"
+                   FontFamily="Brushwell.otf#Brushwell"
+                   Grid.Row="0"
+                   FontSize="12"
+                   HorizontalOptions="End"
+                   Margin="0,15,0,0"/>
+
+            <Button Grid.Column="1"
+                    Grid.Row="0"
+                    CornerRadius="20"
+                    BackgroundColor="#005E68" 
+                    TextColor="White"
+                    Margin="15,15,15,15"
+                    FontSize="Small"
+                    Clicked="Login_Clicked"/>
+
+        </Grid>
+
+    </StackLayout>
+
+
+</ContentPage>

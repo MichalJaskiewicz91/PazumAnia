@@ -36,6 +36,7 @@ namespace PazumAnia.ViewModels
                     {
                         SuccessMessage = "Login successfully";
                         await App.Current.MainPage.DisplayAlert("Notification", "Login successfully", "Ok");
+                        await Application.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
                     }
 
                     Settings.AccessToken = accesstoken;

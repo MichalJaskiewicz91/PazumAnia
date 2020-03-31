@@ -9,6 +9,47 @@
         <ViewModels:LoginViewModel/>
     </ContentPage.BindingContext>
 
+    <!-- Resources including styles-->
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="CustomLabelStyle"
+                       TargetType="Label">
+
+                <Setter Property="TextColor"
+                       Value="Green"/>
+
+                <Setter Property="FontSize"
+                       Value="50"/>
+            </Style>
+
+            <Style x:Key="CustomEntryStyle"
+                       TargetType="Entry">
+
+                <Setter Property="TextColor"
+                        Value="White" />
+
+                <Setter Property="FontFamily"
+                        Value="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
+
+                <Setter Property="Placeholder"
+                        Value="White"/>
+                
+                <Setter Property="PlaceholderColor"
+                        Value="White"/>
+
+                <Setter Property="HeightRequest"
+                        Value="40"/>
+
+                <Setter Property="FontSize"
+                        Value="16"/>
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
     <ContentPage.Content>
 
         <StackLayout BackgroundColor="#005E68" Spacing="10" >
@@ -22,29 +63,65 @@
                    HorizontalOptions="Center" 
                    FontSize="24" 
                    FontFamily="Brushwell.otf#Brushwell" />
-            
-            <!-- Entry Login-->
+
+            <StackLayout BackgroundColor="#005E68" Spacing="0" >
+                <!-- Entry Login-->
             <Entry Text="{Binding Username}"
-                   TextColor="White" 
                    Placeholder="Wpisz swój login " 
-                   FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" 
-                   PlaceholderColor="White"/>
+                   Style="{StaticResource CustomEntryStyle}"/>
+
 
             <!-- Entry Password-->
-            <Entry Text ="{Binding Password}"
-                   TextColor="white" 
+            <Entry Text ="{Binding Password}" 
                    Placeholder="Wpisz swoje hasło " 
-                   FontFamily="AlexBrush-Regular.ttf#AlexBrush-Regular" 
-                   PlaceholderColor="White"
                    IsPassword="True"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20"
+                   Style="{StaticResource CustomEntryStyle}"/>
 
+            </StackLayout>
             <!-- Login button-->
             <Button Command="{Binding LoginCommand}" 
+                    CornerRadius="20"
                     BackgroundColor="White" 
                     Text="Login" 
                     FontFamily="Brushwell.otf#Brushwell" 
-                    TextColor="#005E68"/>
+                    TextColor="#005E68"
+                    HeightRequest="32"
+                    FontSize="10"
+                    Margin="20,0,20,17"/>
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Column="0"/>
+
+                <Grid Grid.Column="1"/>
+
+                <Label Text="Jeżeli posiadasz już konto przejdz do rejestracji"
+                   Grid.Column="0"
+                   FontFamily="Brushwell.otf#Brushwell"
+                   Grid.Row="0"
+                   FontSize="12"
+                   TextColor="White"
+                   HorizontalOptions="End"
+                   Margin="0,15,0,0"/>
+
+                <Button Grid.Column="1"
+                    Grid.Row="0"
+                    CornerRadius="20"
+                    BackgroundColor="White" 
+                    TextColor="#005E68"
+                    Margin="15,15,15,15"
+                    FontSize="Small"
+                    Clicked="Registration_Clicked"/>
+
+            </Grid>
 
             <!-- Status label // so far it is not used -->
             <!--<Label Text="{Binding SuccessMessage}"

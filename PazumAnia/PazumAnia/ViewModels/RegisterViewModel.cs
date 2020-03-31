@@ -1,5 +1,6 @@
 ﻿using PazumAnia.Helpers;
 using PazumAnia.Services;
+using PazumAnia.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,11 +31,12 @@ namespace PazumAnia.ViewModels
 
                     if (isSuccess)
                     {
-                        Message = "Registered successfully";
+                        await App.Current.MainPage.DisplayAlert("Notification", "Registered successfully","Ok");
+                        await Application.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
                     }
                     else
                     {
-                        Message = "Retry later";
+                        await App.Current.MainPage.DisplayAlert("Notification", "User already exists or password has not special or big letter ", "Ok");
                     }
                 });  
             }

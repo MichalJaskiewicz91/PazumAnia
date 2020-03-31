@@ -4,18 +4,22 @@
              x:Class="PazumAnia.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!--<Style x:Key="Brushwell" TargetType="Label">
-                <Setter Property="FontFamily" Value="Brushwell.otf#Brushwell"/>
+            <Style x:Key="Brushwell" TargetType="Label">
+                <Setter Property="FontFamily" 
+                        Value="Brushwell.otf#Brushwell"/>
             </Style>
             <Style x:Key="OpenSans-Regular" TargetType="Label">
-                <Setter Property="FontFamily" Value="OpenSans-Regular.ttf#OpenSans-Regular"/>
+                <Setter Property="FontFamily" 
+                        Value="OpenSans-Regular.ttf#OpenSans-Regular"/>
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="FontFamily" Value="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
+                <Setter Property="FontFamily" 
+                        Value="AlexBrush-Regular.ttf#AlexBrush-Regular"/>
             </Style>
             <Style TargetType="Button">
-                <Setter Property="FontFamily" Value="Brushwell.otf#Brushwell"/>
-            </Style>-->
+                <Setter Property="FontFamily" 
+                        Value="Brushwell.otf#Brushwell"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

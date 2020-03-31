@@ -17,9 +17,9 @@ namespace PazumAnia
         {
             InitializeComponent();
         }
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Login_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new NavigationPage(new LoginPage());
+            await Navigation.PushAsync(new LoginPage());
         }
     }
 }

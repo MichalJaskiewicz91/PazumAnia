@@ -14,15 +14,9 @@ namespace PazumAnia.Views
 	{
 		public RegisterPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
-
         private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new LoginPageTwo());
-        }
-
-        private async void AniaButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
         }

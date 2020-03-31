@@ -14,9 +14,9 @@ namespace PazumAnia
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new RegisterPage());
+            MainPage = new NavigationPage(new MainTabbedPage());
 
-            SetMainPage();
+            //SetMainPage();
         }
 
         private void SetMainPage()
@@ -36,7 +36,7 @@ namespace PazumAnia
             }
             else
             {
-                MainPage = new NavigationPage(new RegisterPage());
+                MainPage = new NavigationPage(new RegisterPageAnia());
             }
         }
 
