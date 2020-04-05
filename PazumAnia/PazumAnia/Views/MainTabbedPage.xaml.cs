@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using PazumAnia.ViewModels;
+using ZXing.Net.Mobile.Forms;
 
 namespace PazumAnia.Views
 {
@@ -35,6 +36,20 @@ namespace PazumAnia.Views
         private async void RegisterBackButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegisterPage());
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            var scan = new ZXingScannerPage();
+            await Navigation.PushAsync(scan);
+            scan.OnScanResult += (result) =>
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PopAsync();
+                    mycode.Text = result.Text;
+                });
+            };
         }
     }
 }

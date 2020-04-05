@@ -14,7 +14,14 @@
     <ContentPage Title="Home" Icon="baseline_house_black_18">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Thierry Henry"/>
+                <Button Text="" 
+                        Clicked="Button_Clicked_1"
+                        TextColor="Red"
+                        HorizontalOptions="Center"/>
+
+                <Label Text="Thierry Henry"
+                       x:Name="mycode"/>
+
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

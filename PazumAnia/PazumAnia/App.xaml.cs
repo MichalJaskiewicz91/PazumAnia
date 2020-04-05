@@ -14,9 +14,9 @@ namespace PazumAnia
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainTabbedPage());
+            //MainPage = new NavigationPage(new MainTabbedPage());
 
-            //SetMainPage();
+            SetMainPage();
         }
 
         private void SetMainPage()
@@ -28,7 +28,7 @@ namespace PazumAnia
                     var vm = new LoginViewModel();
                     vm.LoginCommand.Execute(null);
                 }
-                MainPage = new NavigationPage(new IdeasPage());
+                MainPage = new NavigationPage(new MainTabbedPage());
             }
             else if (!string.IsNullOrEmpty(Settings.Username) && !string.IsNullOrEmpty(Settings.Password))
             {
