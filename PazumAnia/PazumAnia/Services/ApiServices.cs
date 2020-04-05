@@ -61,6 +61,15 @@ namespace PazumAnia.Services
             var client = new HttpClient();
 
             //Save response from the server
+            //try
+            //{
+            //    var response = await client.SendAsync(request);
+            //}
+            //catch (Exception e)
+            //{
+            //    Debug.WriteLine(e.Message);
+            //}
+
             var response = await client.SendAsync(request);
 
             //Convert response content as string
