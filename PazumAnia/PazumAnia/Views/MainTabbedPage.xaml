@@ -29,8 +29,7 @@
     <!--Tab 2-->
     <ContentPage Title="Visits" Icon="baseline_event_black_24dp">
         <ContentPage.Content>
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Thierry Henry"/>
+            <StackLayout x:Name="visits">
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

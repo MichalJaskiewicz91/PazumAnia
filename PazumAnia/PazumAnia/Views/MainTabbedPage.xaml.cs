@@ -20,6 +20,25 @@ namespace PazumAnia.Views
         {
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+
+            //barcode
+            ZXingBarcodeImageView barcode = new ZXingBarcodeImageView
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                AutomationId = "zxingBarcodeImageView"
+            };
+
+            barcode.BarcodeFormat = ZXing.BarcodeFormat.QR_CODE;
+            barcode.BarcodeOptions.Width = 300;
+            barcode.BarcodeOptions.Height = 300;
+            barcode.BarcodeOptions.Margin = 10;
+            barcode.BarcodeValue = "Paznokcie hybrydowe";
+
+            visits.Children.Insert(1, barcode);
+
+
+
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
