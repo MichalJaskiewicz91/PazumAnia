@@ -21,6 +21,17 @@ namespace PazumAnia.Views
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
+            MainListView.ItemsSource = new List<string>
+            {
+                "Thierry",
+                "Henry",
+                "Ronaldinho",
+                "Gaucho",
+                "Bizon",
+                "Gizon",
+                "Vizon",
+            };
+
             //barcode
             ZXingBarcodeImageView barcode = new ZXingBarcodeImageView
             {

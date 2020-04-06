@@ -11,7 +11,9 @@
     <!--Pages can be added as references or inline-->
 
     <!--Tab 1-->
-    <ContentPage Title="Home" Icon="baseline_house_black_18">
+    <ContentPage Title="Home" 
+                 Icon="baseline_house_black_18"
+                 BackgroundColor="#005E68">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                 <Button Text="" 
@@ -21,13 +23,14 @@
 
                 <Label Text="Thierry Henry"
                        x:Name="mycode"/>
-
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 
     <!--Tab 2-->
-    <ContentPage Title="Visits" Icon="baseline_event_black_24dp">
+    <ContentPage Title="Visits" 
+                 Icon="baseline_event_black_24dp"
+                 BackgroundColor="#005E68">
         <ContentPage.Content>
             <StackLayout x:Name="visits">
             </StackLayout>
@@ -35,7 +38,9 @@
     </ContentPage>
 
     <!--Tab 3-->
-    <ContentPage Title="Profile" Icon="baseline_person_black_24">
+    <ContentPage Title="Profile" 
+                 Icon="baseline_person_black_24"
+                 BackgroundColor="#005E68">
         <ContentPage.Content>
             <StackLayout Orientation="Vertical">
                 <Button Text="Add new User" Clicked="Button_Clicked"></Button>
@@ -53,6 +58,63 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <!--Admin Tap-->
+    <ContentPage Title="Home" 
+                 Icon="baseline_house_black_18"
+                 BackgroundColor="#005E68">
+        <ContentPage.Content>
+            <StackLayout BackgroundColor="#005E68">
+                <ListView x:Name="MainListView"
+                      HasUnevenRows="True"
+                      Header=""
+                      Footer="">
+
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Padding="12"
+                              BackgroundColor="#005E68">
+
+                                <Label Text="Nazwy usług i QR code"
+                                   TextColor="White"
+                                   FontSize="34"
+                                   Grid.Column="0"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="12"
+                                  BackgroundColor="White">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Label Text="{Binding .}"
+                                       FontSize="30"
+                                       Grid.Column="0"
+                                       TextColor="#005E68"/>
+
+                                    <Button Text="Lol"
+                                    HorizontalOptions="End"
+                                    Grid.Column="1"
+                                    CornerRadius="2"
+                                    BackgroundColor="Gray"/>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
                 </ListView>
             </StackLayout>
         </ContentPage.Content>
