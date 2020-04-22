@@ -27,6 +27,11 @@ namespace PazumAnia.Views
             await Navigation.PushAsync(new RegisterPageAnia());
         }
 
+        private async void Forgot_Password(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ForgotPassword());
+        }
+
 
         //public static async Task DisplayAlert(string notification, string description, string ok)
         //{

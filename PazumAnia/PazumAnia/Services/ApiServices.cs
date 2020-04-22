@@ -149,6 +149,30 @@ namespace PazumAnia.Services
 
             return ideas;
         }
+        public async Task<bool> ResetAsync(string email)
+        {
+            //Creating new http client
+            var client = new HttpClient();
+
+            //Building model using passed parameters
+            var model = new RegisterBindingModel
+            {
+                Email = email
+            };
+
+            //Convert model to Json form
+            var json = JsonConvert.SerializeObject(model);
+
+            //Create http content
+            HttpContent content = new StringContent(json);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            //Save response from the server
+            var response = await client.PostAsync("http://192.168.0.129:8020/help/forgotpassword", content);
+
+            //Return successcode
+            return response.IsSuccessStatusCode;
+        }
 
     }
 }

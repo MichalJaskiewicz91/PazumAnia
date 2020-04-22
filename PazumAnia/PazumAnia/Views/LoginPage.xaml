@@ -89,7 +89,24 @@
                     FontSize="10"
                     Margin="20,0,20,17"/>
 
-            <Grid >
+            <Label x:Name="ForgotPassword" 
+                   TextColor="White" 
+                   Text="Zapomniałeś hasła?" 
+                   HorizontalOptions="Center" 
+                   FontSize="24" 
+                   FontFamily="Brushwell.otf#Brushwell" />
+
+            <Button Clicked="Forgot_Password"  
+                    CornerRadius="20"
+                    BackgroundColor="White" 
+                    Text="Reset" 
+                    FontFamily="Brushwell.otf#Brushwell" 
+                    TextColor="#005E68"
+                    HeightRequest="32"
+                    FontSize="10"
+                    Margin="20,0,20,17"/>
+
+        <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="1*"/>
