@@ -50,7 +50,6 @@
 
     </ContentPage.Resources>
 
-    <ContentPage.Content>
 
         <StackLayout BackgroundColor="#005E68" Spacing="10" >
             <!-- Image PazumAnia White-->
@@ -130,5 +129,4 @@
 
         </StackLayout>
 
-    </ContentPage.Content>
 </ContentPage>
