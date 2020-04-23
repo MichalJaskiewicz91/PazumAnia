@@ -10,6 +10,7 @@ using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using PazumAnia.ViewModels;
 using ZXing.Net.Mobile.Forms;
+using Rg.Plugins.Popup.Services;
 
 namespace PazumAnia.Views
 {
@@ -80,6 +81,10 @@ namespace PazumAnia.Views
                     mycode.Text = result.Text;
                 });
             };
+        }
+        private async void Popup_Clicked(object sender, EventArgs e)
+        {
+            await PopupNavigation.Instance.PushAsync(new PopupView());
         }
     }
 }
