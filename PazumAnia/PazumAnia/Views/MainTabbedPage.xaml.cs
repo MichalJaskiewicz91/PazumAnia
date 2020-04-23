@@ -84,7 +84,9 @@ namespace PazumAnia.Views
         }
         private async void Popup_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new PopupView());
+            Xamarin.Forms.Button button = (Xamarin.Forms.Button)sender;
+            string name = button.Text;
+            await PopupNavigation.Instance.PushAsync(new PopupView(name));
         }
     }
 }
