@@ -26,11 +26,11 @@ namespace PazumAnia.ViewModels
 
                     if (isSuccess)
                     {
-                        await App.Current.MainPage.DisplayAlert("Notification", "Password has been sent successfully", "Ok");
+                        await App.Current.MainPage.DisplayAlert("Notification", "Password has been sent successfully , check your mailbox", "Ok");
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("Notification", "Password has not been sent ", "Ok");
+                        await App.Current.MainPage.DisplayAlert("Notification", "Password has not been sent, this address does not exist ", "Ok");
                     }
                 });
             }
