@@ -23,7 +23,7 @@
                         TextColor="Red"
                         HorizontalOptions="Center"/>
 
-                <Label Text="Thierry Henry"
+                <Label Text="Scan service"
                        x:Name="mycode"/>
             </StackLayout>
         </ContentPage.Content>
