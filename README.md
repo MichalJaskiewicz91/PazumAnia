@@ -46,7 +46,7 @@ Services page:
 
 ## TODO
 List of TODOs for future development
-* Many features is still to do. Due to corona project is stopped.
+* There is still many features to do. Due to corona project is stopped.
 
 ## Status
 Project is: _in_progress_
