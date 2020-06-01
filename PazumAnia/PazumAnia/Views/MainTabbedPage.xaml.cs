@@ -24,12 +24,12 @@ namespace PazumAnia.Views
 
             MainListView.ItemsSource = new List<string>
             {
-                "Hybryda",
+                "Hybrydy ",
                 "Flexigel",
-                "Przedłużanie",
+                "Przedlu",
                 "Pedicure",
-                "Henna",
-                "Regulacja brwi",
+                "Reg.Brwi",
+                "Manicure",
             };
 
             //barcode
